@@ -1,2 +1,9 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import '../global.css'
+    import FileUploader from '../components/FileUploader.svelte';
+  </script>
+  
+  <h1>Galería Pública femCoders Club</h1>
+  
+  <FileUploader />
+  
