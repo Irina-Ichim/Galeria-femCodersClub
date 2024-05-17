@@ -69,6 +69,26 @@ app.get('/usuarios', async (req, res) => {
     res.status(500).json({ success: false, message: 'Error en el servidor' });
   }
 });
+
+// Ruta para eliminar un usuario por su ID
+app.delete('/usuarios/:id', async (req, res) => {
+  const idUsuario = req.params.id;
+  const query = 'DELETE FROM usuarios WHERE id = ?';
+
+  try {
+    const [result] = await connection.execute(query, [idUsuario]);
+    if (result.affectedRows > 0) {
+      res.json({ success: true, message: 'Usuario eliminado exitosamente' });
+    } else {
+      res.status(404).json({ success: false, message: 'Usuario no encontrado' });
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Error en el servidor' });
+  }
+});
+
+
 app.listen(3000, () => {
   console.log('Server running on port 3000');
 });
