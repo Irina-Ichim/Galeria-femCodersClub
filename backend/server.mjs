@@ -57,6 +57,18 @@ app.post('/register', async (req, res) => {
   }
 });
 
+// Ruta para obtener todos los usuarios
+app.get('/usuarios', async (req, res) => {
+  const query = 'SELECT * FROM usuarios';
+
+  try {
+    const [results] = await connection.execute(query);
+    res.json({ success: true, usuarios: results });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Error en el servidor' });
+  }
+});
 app.listen(3000, () => {
   console.log('Server running on port 3000');
 });
