@@ -1,5 +1,5 @@
 <script>
-  import { goto } from '$app/navigation'; 
+  import { goto } from '$app/navigation';
 
   let usuario = '';
   let contraseña = '';
@@ -17,10 +17,14 @@
     });
 
     const data = await response.json();
-    console.log(data) 
+    console.log(data);
 
     if (data.success) {
-      goto('/home'); 
+      if (usuario === 'onlyirina7@gmail.com') {
+        goto('/administradora'); 
+      } else {
+        goto('/home'); 
+      }
     } else {
       alert(data.message);
     }
