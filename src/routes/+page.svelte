@@ -4,10 +4,28 @@
   let usuario = '';
   let contraseña = '';
 
-  // @ts-ignore
-  function handleSubmit(event) {
-    // Handle form submission logic here
-    goto('/home'); 
+  async function handleSubmit(event) {
+    const response = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        correo_electronico: usuario,
+        contraseña: contraseña
+      })
+    });
+
+    const data = await response.json();
+    console.log(data) 
+    
+  
+
+    if (data.success) {
+      goto('/home'); 
+    } else {
+      alert(data.message);
+    }
   }
 </script>
 
@@ -28,4 +46,3 @@
 
 <p><a href="/contraseña-olvidada">¿Has olvidado tu contraseña?</a></p>
 <p><a href="/registrate">Registrarse</a></p>
-
