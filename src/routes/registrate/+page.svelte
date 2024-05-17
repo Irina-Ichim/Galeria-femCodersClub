@@ -40,4 +40,4 @@
     <button type="submit">Enviar</button> 
   </form>
   
-  <p><a href="/login">Iniciar Sesión</a></p>
+  <p><a href="/">Iniciar Sesión</a></p>
