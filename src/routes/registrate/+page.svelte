@@ -1,3 +1,43 @@
-<h2>Registrate a la comunidad de femCoders Club
-
-</h2>
+<script>
+    let usuario = '';
+    let contraseña = '';
+  
+    async function handleSubmit(event) {
+      const response = await fetch('http://localhost:3000/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          correo_electronico: usuario,
+          contraseña: contraseña
+        })
+      });
+  
+      const data = await response.json();
+      console.log(data) 
+  
+      if (data.success) {
+        alert('Usuario registrado exitosamente');
+      } else {
+        alert(data.message);
+      }
+    }
+  </script>
+  
+  <h1>Registrarse</h1>
+  
+  <form on:submit|preventDefault={handleSubmit}>
+    <label>
+      Usuario:
+      <input type="text" bind:value={usuario} />
+    </label>
+    <label>
+      Contraseña:
+      <input type="password" bind:value={contraseña} />
+    </label>
+  
+    <button type="submit">Enviar</button> 
+  </form>
+  
+  <p><a href="/login">Iniciar Sesión</a></p>
