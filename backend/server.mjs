@@ -7,8 +7,11 @@ import multer from 'multer';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-dotenv.config();
+import fs from 'fs';
+import util from 'util';
 
+dotenv.config();
+const readdir = util.promisify(fs.readdir);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -142,6 +145,15 @@ app.get('/imagenes/:usuario_id', async (req, res) => {
   }
 });
 
+app.get('/all-images', async (req, res) => {
+  try {
+    const files = await readdir(path.join(__dirname, 'uploads'));
+    res.json({ success: true, images: files });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Error en el servidor' });
+  }
+});
 
 app.listen(3000, () => {
   console.log('Server running on port 3000');
