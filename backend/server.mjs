@@ -3,11 +3,20 @@ import mysql from 'mysql2/promise';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import multer from 'multer';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 
 let connection;
 
@@ -20,6 +29,7 @@ let connection;
   });
   console.log('Connected to MySQL');
 })();
+
 
 // Ruta para iniciar sesión
 app.post('/login', async (req, res) => {
@@ -82,6 +92,50 @@ app.delete('/usuarios/:id', async (req, res) => {
     } else {
       res.status(404).json({ success: false, message: 'Usuario no encontrado' });
     }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Error en el servidor' });
+  }
+});
+
+
+// Configuración de multer para almacenar las imágenes
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/');
+  },
+  filename: function (req, file, cb) {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  }
+});
+
+const upload = multer({ storage: storage });
+
+// Ruta para subir imágenes
+app.post('/upload', upload.array('images', 5), async (req, res) => {
+  const { usuario_id } = req.body;
+  const files = req.files;
+
+  try {
+    for (const file of files) {
+      const query = 'INSERT INTO images (usuario_id, name, data) VALUES (?, ?, ?)';
+      await connection.execute(query, [usuario_id, file.originalname, file.path]);
+    }
+    res.json({ success: true, message: 'Imágenes subidas exitosamente' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Error en el servidor' });
+  }
+});
+
+// Ruta para obtener imágenes de un usuario
+app.get('/imagenes/:usuario_id', async (req, res) => {
+  const usuario_id = req.params.usuario_id;
+
+  const query = 'SELECT * FROM images WHERE usuario_id = ?';
+  try {
+    const [results] = await connection.execute(query, [usuario_id]);
+    res.json({ success: true, imagenes: results });
   } catch (err) {
     console.error(err);
     res.status(500).json({ success: false, message: 'Error en el servidor' });
