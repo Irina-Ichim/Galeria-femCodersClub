@@ -60,7 +60,7 @@
   
     const handleSubmit = async () => {
       const formData = new FormData();
-      files.forEach(({ file }) => formData.append('images', file)); // Aquí se corrigió el error
+      files.forEach(({ file }) => formData.append('images', file)); 
       formData.append('usuario_id', '1'); 
   
       const response = await fetch('http://localhost:3000/upload', {
