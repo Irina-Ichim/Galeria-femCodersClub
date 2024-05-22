@@ -1,6 +1,7 @@
 <script>
 // @ts-nocheck
 
+
   import { goto } from '$app/navigation';
 
   let usuario = '';
