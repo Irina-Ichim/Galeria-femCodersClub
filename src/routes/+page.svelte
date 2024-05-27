@@ -72,34 +72,7 @@
 </div>
 
 <style>
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 40px;
-  }
-
-  .form-container {
-    flex: 1;
-    max-width: 400px;
-    height: 500px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-  .form-container p {
-    text-align: center;
-    margin-top: 10px;
-  }
+  
   h2 {
     margin-bottom: 20px;
     margin-top: 70px;
@@ -123,17 +96,6 @@
   }
 
   @media (max-width: 600px) {
-    .container {
-      flex-direction: column;
-      margin-left: 0;
-    }
-
-    .form-container {
-      max-width: 100%;
-      height: auto;
-      padding: 10px;
-    }
-
     h2 {
       margin-top: 30px;
     }
