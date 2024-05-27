@@ -1,10 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    font-family: 'Playfair Display', serif;
-    background-color: #f5f5f5;
+:root {
+  --color-primary: #3f3a8a;
+  --color-secondary: #e16b29;
+}
+body {
+  font-family: "Playfair Display", serif;
+  background-color: white;
+  color: #3f3a8a;
+}
+
+h1 {
+  color: var(--color-secondary);
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2), 2px 2px 0px rgba(0, 0, 0, 0.2),
+    3px 3px 0px rgba(0, 0, 0, 0.2), 4px 4px 0px rgba(0, 0, 0, 0.2),
+    5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.spline {
+  flex: 1;
+  margin-right: 20px;
+}
+
+spline-viewer {
+  margin-top: 90px;
+  height: 71.2vh;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+  color: var(--color-primary);
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--color-primary);
+}
+button {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: darken(var(--color-secondary), 10%);
+  border: 1px solid #3f3a8a;
+  color: #e16b29;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  text-align: center;
+  padding: 10px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 20px; 
+    margin-top: 130px; 
+  }
+
+
 }

@@ -88,6 +88,23 @@ app.get("/usuarios", async (req, res) => {
     res.status(500).json({ success: false, message: "Error en el servidor" });
   }
 });
+// Ruta para restablecer la contraseña
+app.post("/reset-password", async (req, res) => {
+  const { correo_electronico, nueva_contraseña } = req.body;
+  const query = "UPDATE usuarios SET contraseña = ? WHERE correo_electronico = ?";
+
+  try {
+    const [result] = await connection.execute(query, [nueva_contraseña, correo_electronico]);
+    if (result.affectedRows > 0) {
+      res.json({ success: true, message: "Contraseña restablecida exitosamente" });
+    } else {
+      res.status(404).json({ success: false, message: "Usuario no encontrado" });
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: "Error en el servidor", error: err.message });
+  }
+});
 
 // Ruta para eliminar un usuario por su ID
 app.delete("/usuarios/:id", async (req, res) => {
