@@ -4,6 +4,7 @@
   </script>
   
 
+
   
   <main>
     
@@ -15,7 +16,4 @@
     <p>&copy; 2024 femCoders Club</p>
   </footer>
   
-  <style>
-    
-  </style>
   

@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --color-primary: #3f3a8a;
   --color-secondary: #e16b29;
@@ -81,6 +82,7 @@ footer {
     font-size: 20px; 
     margin-top: 130px; 
   }
+
 
 
 }
