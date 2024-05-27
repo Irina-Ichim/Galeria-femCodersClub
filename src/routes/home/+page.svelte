@@ -42,7 +42,7 @@
 
       <p class="destacar">
         Esto significa que aceptas nuestra <a href="/politica-de-privacidad"
-          >política de privacidad</a
+          >Política De Privacidad</a
         >
         y que las imágenes serán visibles para cualquier persona que visite la galería.
       </p>
@@ -78,6 +78,8 @@
   }
 
   .container {
+    display: flex;
+    flex-direction: column;
     max-width: 100%;
     margin: 250px auto 0;
     padding: 20px;
@@ -87,12 +89,7 @@
   }
 
   .destacar {
-    background: linear-gradient(
-      to bottom right,
-      var(--color-secondary),
-      var(--color-primary),
-      var(--color-secondary)
-    );
+    background: var(--color-secondary);
     color: white;
   }
 
@@ -102,7 +99,7 @@
   }
 
   a {
-    color: var(--color-secondary);
+    color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     font-size: 1.2em;
   }

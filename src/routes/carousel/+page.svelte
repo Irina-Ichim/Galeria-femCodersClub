@@ -46,6 +46,9 @@
   };
 
   onMount(loadImages);
+  function goHome() {
+    window.location.href = "http://localhost:5173/";
+  }
 </script>
 
 <div class="header">
@@ -53,6 +56,7 @@
     <img src="/logo.jpg" alt="logo" height="60px" />
   </a>
   <h1>Galería Pública femCoders Club</h1>
+  <button on:click={goHome} class="volver">Volver al Inicio</button>
 </div>
 
 <div class="carousel">
@@ -76,15 +80,14 @@
 <style>
   .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-top: 50px;
     padding-bottom: 30px;
-  }
-
-  .header img {
     margin-right: 15px;
   }
+
+
 
   .carousel {
     display: flex;

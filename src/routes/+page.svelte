@@ -95,6 +95,7 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   }
 
+
   @media (max-width: 600px) {
     h2 {
       margin-top: 30px;

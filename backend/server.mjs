@@ -54,6 +54,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
+
 // Ruta para registrarse
 app.post("/register", async (req, res) => {
   const { correo_electronico, contraseña } = req.body;
