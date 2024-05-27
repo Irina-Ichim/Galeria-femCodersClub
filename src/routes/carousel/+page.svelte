@@ -1,8 +1,9 @@
 <script>
+// @ts-nocheck
+
   import { onMount } from 'svelte';
-  /**
-   * @type {string | any[]}
-   */
+
+  // @ts-ignore
   let images = [];
   let currentImage = 0;
 
@@ -10,7 +11,13 @@
     const response = await fetch('http://localhost:3000/all-images');
     const data = await response.json();
     if (data.success) {
-      images = data.images;
+      // @ts-ignore
+      images = data.images.map(image => {
+        // Recuperar los likes guardados en localStorage
+        const likes = localStorage.getItem(`likes-${image}`) || 0;
+        // @ts-ignore
+        return { src: image, likes: parseInt(likes, 10) };
+      });
     } else {
       alert(data.message);
     }
@@ -24,39 +31,110 @@
     currentImage = (currentImage - 1 + images.length) % images.length;
   };
 
+  // @ts-ignore
+  const incrementLikes = (index) => {
+    // @ts-ignore
+    images = images.map((image, i) => {
+      if (i === index) {
+        const newLikes = image.likes + 1;
+        // Guardar los nuevos likes en localStorage
+        localStorage.setItem(`likes-${image.src}`, newLikes);
+        return { ...image, likes: newLikes };
+      }
+      return image;
+    });
+  };
+
   onMount(loadImages);
 </script>
 
+<div class="header">
+  <a href="https://www.linkedin.com/company/fem-coders-club/" target="_blank">
+    <img src="/logo.jpg" alt="logo" height="60px" />
+  </a>
+  <h1>Galería Pública femCoders Club</h1>
+</div>
+
 <div class="carousel">
-{#each images as image, index}
-  {#if index === currentImage}
-    <img src={`http://localhost:3000/uploads/${image}`} alt="Imagen del carrusel" />
-  {/if}
-{/each}
-<button on:click={prevImage}>Anterior</button>
-<button on:click={nextImage}>Siguiente</button>
+  {#each images as image, index}
+    {#if index === currentImage}
+      <div class="image-container">
+        <img src={`http://localhost:3000/uploads/${image.src}`} alt="Imagen del carrusel" />
+        <div class="likes">
+          <span>¡Me gusta!: {image.likes}</span>
+          <button on:click={() => incrementLikes(index)}> 💜</button>
+        </div>
+      </div>
+    {/if}
+  {/each}
+  <div class="buttons">
+    <button on:click={prevImage}>Anterior</button>
+    <button on:click={nextImage}>Siguiente</button>
+  </div>
 </div>
 
 <style>
-.carousel {
-  width: 800px;
-  height: 800px;
-  position: relative;
-}
-.carousel img {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-button{
-  position: absolute;
-  top: 80%;
-  margin-left: 200px;
-  transform: translateY(-50%);
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding-bottom: 30px;
+  }
+
+  .header img {
+    margin-right: 15px;
+  }
+
+  .carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .image-container {
+    position: relative;
+  }
+
+  .carousel img {
+    max-width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .likes {
+    position: absolute;
+    bottom: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .carousel button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--color-secondary);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .carousel button:hover {
+    background-color: var(--color-primary);
+    
+  }
 </style>
+

@@ -68,6 +68,7 @@
     background: var(--color-primary);
     flex-wrap: wrap;
     justify-content: center;
+    padding-bottom: 30px;
   }
 
   .izquierda {
