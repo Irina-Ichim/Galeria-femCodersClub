@@ -54,9 +54,11 @@
     <p>¡Gracias por tu contribución! 🎉</p>
     {#if policyAccepted}
       <MultipleFileUploader />
-      <button on:click={confirmUpload}>Ver Galería</button>
+      <button on:click={confirmUpload}>Ver Galería </button>
     {/if}
+    
   </div>
+ 
 </div>
 
 <style>
@@ -68,7 +70,7 @@
     background: var(--color-primary);
     flex-wrap: wrap;
     justify-content: center;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
   }
 
   .izquierda {
@@ -89,7 +91,7 @@
   }
 
   .destacar {
-    background: var(--color-secondary);
+    background: linear-gradient(to right, #e16b29, #ffcc99, #ff6600);
     color: white;
   }
 

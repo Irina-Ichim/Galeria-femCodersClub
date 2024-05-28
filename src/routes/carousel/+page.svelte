@@ -47,7 +47,7 @@
 
   onMount(loadImages);
   function goHome() {
-    window.location.href = "http://localhost:5173/";
+    window.location.href = "/home";
   }
 </script>
 

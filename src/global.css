@@ -83,8 +83,33 @@ footer {
   color: var(--color-secondary);
   text-align: center;
   padding: 10px 0;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
 }
+
+footer .center {
+  margin: 0 auto;
+  text-align: center;
+  flex: 1;
+}
+
+footer .right {
+  margin-left: auto;
+}
+
+footer a {
+  color: #e16b29;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -138,6 +163,9 @@ form {
   }
   h2 {
     font-size: 18px;
+  }
+  p{
+    font-size: small;
   }
   footer {
     display: none;
