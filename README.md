@@ -69,7 +69,7 @@ ___Navegación entre Páginas
 La importación de goto desde $app/navigation es una característica poderosa de SvelteKit que simplifica la navegación entre páginas de manera intuitiva. Puedes utilizar esta función para dirigir a los usuarios a diferentes secciones de tu aplicación de forma dinámica y sin problemas.
 
 ___Integración con Bases de Datos
-SvelteKit se integra fácilmente con bases de datos, lo que te permite recuperar y mostrar datos dinámicamente en tu aplicación. 
+SvelteKit se integra fácilmente con bases de datos, lo que te permite recuperar y mostrar datos dinámicamente en tu aplicación. Además, puedes agregar características adicionales, como un contador de likes en el carousel, permitiendo a los usuarios interactuar con las imágenes y expresar su aprecio.
 
 ## Conclusión 🌟
 

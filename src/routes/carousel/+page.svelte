@@ -86,10 +86,7 @@
     padding-bottom: 30px;
     margin-right: 15px;
   }
-
-
-
-  .carousel {
+ .carousel {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,7 +104,6 @@
     object-fit: cover;
     border-radius: 10px;
   }
-
   .likes {
     position: absolute;
     bottom: 5px;
@@ -139,5 +135,16 @@
     background-color: var(--color-primary);
     
   }
+  @media screen and (max-width: 600px) {
+  .carousel {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .carousel img {
+    max-width: calc(90vw - 40px); 
+  }
+}
+
 </style>
 
