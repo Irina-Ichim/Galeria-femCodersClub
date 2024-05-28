@@ -74,3 +74,7 @@ SvelteKit se integra fácilmente con bases de datos, lo que te permite recuperar
 ## Conclusión 🌟
 
 SvelteKit hace que el desarrollo de aplicaciones web sea más rápido y sencillo al proporcionar herramientas intuitivas para manejar la lógica de la aplicación, la navegación entre páginas y la integración con bases de datos. Con estas características, la Galería FemCoders Club ofrece una experiencia de usuario fluida y una gestión eficiente de los datos. ¡Explora todas las posibilidades que ofrece SvelteKit y sigue construyendo aplicaciones increíbles!
+
+## Agradecimientos especiales 💖
+
+Queremos expresar nuestro agradecimiento a [Spline](https://spline.design/) y su vibrante comunidad por inspirarnos y ayudarnos a dar vida a nuestras ideas! 🎨🚀
