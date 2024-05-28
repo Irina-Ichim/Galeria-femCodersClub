@@ -2,29 +2,29 @@
 
 Bienvenido/a a la Galería FemCoders Club, una plataforma donde los miembros registrados pueden compartir fotos de los eventos organizados por la comunidad femCoders Club. Este proyecto consta de dos partes principales: el backend y la interfaz de usuario.
 
-## Descripción
+## Descripción 📝
 
 La Galería FemCoders Club es una galería pública donde los usuarios registrados pueden subir y compartir fotos de los eventos de femCoders Club. Está diseñada para ser una plataforma segura y accesible para todos los miembros de la comunidad.
 
-## Características
+## Características 🚀
 
-*** Registro de Usuarios: Los usuarios pueden registrarse para obtener una cuenta y acceder a la galería.
+___ Registro de Usuarios: Los usuarios pueden registrarse para obtener una cuenta y acceder a la galería.
 
-*** Subida de Fotos: Los usuarios pueden subir fotos de los eventos del FemCoders Club.
+___ Subida de Fotos: Los usuarios pueden subir fotos de los eventos del FemCoders Club.
 
-*** Política de Privacidad: Todos los usuarios deben cumplir con nuestra Política de Privacidad al usar la plataforma.
+___ Política de Privacidad: Todos los usuarios deben cumplir con nuestra Política de Privacidad al usar la plataforma.
 
-*** Backend Node.js: El backend está creado con Node.js, Express y MySQL para gestionar la lógica y la base de datos.
+___ Backend Node.js: El backend está creado con Node.js, Express y MySQL para gestionar la lógica y la base de datos.
 
-*** Interfaz de Usuario SvelteKit: La interfaz de usuario está creada con SvelteKit para una experiencia de usuario dinámica y receptiva.
+___ Interfaz de Usuario SvelteKit: La interfaz de usuario está creada con SvelteKit para una experiencia de usuario dinámica y receptiva.
 
-## Requisitos
+## Requisitos 🛠️
 
 ___ Node.js: El servidor backend está creado con Node.js. Se recomienda utilizar la versión 18 para compatibilidad con el despliegue en Vercel.
 
 ___ MySQL: Se utiliza MySQL como base de datos para almacenar la información de las imágenes y otros datos relacionados.
 
-## Configuración
+## Configuración ⚙️
 
 Sigue estos pasos para configurar el proyecto en tu entorno local:
 
@@ -53,3 +53,24 @@ node server.mjs
 ```bash
 npm run dev
 ```
+
+## Destacando las Ventajas de SvelteKit 🚀
+
+___Agregar Rutas Dinámicas
+SvelteKit facilita la creación de rutas dinámicas, lo que significa que puedes crear rutas personalizadas para cada evento.
+
+Compresión de Imágenes
+___Con SvelteKit, la compresión de imágenes es simple y eficiente. Puedes integrar fácilmente funciones de compresión de imágenes en tu aplicación para reducir el tamaño de los archivos y mejorar el rendimiento de carga de la página.
+
+___Simplificación del Manejo de Formularios
+Con SvelteKit, el manejo de formularios es sencillo y directo. Puedes utilizar las funciones proporcionadas por el framework, como on:submit y bind:value, para manejar la entrada de datos del usuario de manera eficiente.
+
+___Navegación entre Páginas
+La importación de goto desde $app/navigation es una característica poderosa de SvelteKit que simplifica la navegación entre páginas de manera intuitiva. Puedes utilizar esta función para dirigir a los usuarios a diferentes secciones de tu aplicación de forma dinámica y sin problemas.
+
+___Integración con Bases de Datos
+SvelteKit se integra fácilmente con bases de datos, lo que te permite recuperar y mostrar datos dinámicamente en tu aplicación. 
+
+## Conclusión 🌟
+
+SvelteKit hace que el desarrollo de aplicaciones web sea más rápido y sencillo al proporcionar herramientas intuitivas para manejar la lógica de la aplicación, la navegación entre páginas y la integración con bases de datos. Con estas características, la Galería FemCoders Club ofrece una experiencia de usuario fluida y una gestión eficiente de los datos. ¡Explora todas las posibilidades que ofrece SvelteKit y sigue construyendo aplicaciones increíbles!

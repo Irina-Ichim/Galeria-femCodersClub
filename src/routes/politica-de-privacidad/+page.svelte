@@ -1,5 +1,5 @@
 <script>
-    // Puedes agregar cualquier lógica de script aquí si es necesario
+    
   </script>
   
   <style>
