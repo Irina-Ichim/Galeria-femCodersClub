@@ -1,5 +1,7 @@
 <script></script>
-<h2>Politica de Privacidad</h2>
+<h1>Politica de Privacidad</h1>
+
+<h2> En construccion</h2>
 <p>En femCoders Club, nos tomamos muy en serio la privacidad de nuestros usuarios.
     Por eso, queremos que sepas que:</p>
 <ul>No se permiten imagenes de menores de edad.</ul>
