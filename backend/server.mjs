@@ -175,7 +175,7 @@ app.get("/imagenes/:usuario_id", async (req, res) => {
   }
 });
 
-//Ruta para obtener todas las imagenes
+//Ruta para obtener todas las imagenescd backend
 
 app.get("/all-images", async (req, res) => {
   try {
