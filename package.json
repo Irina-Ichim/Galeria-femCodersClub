@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "start": "backend/node server.mjs"
+    "start": "npm start --prefix backend"
     
 },
   "devDependencies": {
