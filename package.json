@@ -7,7 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "start": "concurrently \"cd backend && node server.mjs\" \"npm run dev\""
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
@@ -16,7 +17,8 @@
     "@sveltejs/vite-plugin-svelte": "^2.0.0",
     "svelte": "^3.50.0",
     "svelte-check": "^3.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "concurrently": "^7.0.0"
   },
   "type": "module",
   "dependencies": {
@@ -25,7 +27,11 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "multer": "^1.4.5-lts.1",
+<<<<<<< HEAD
     "mysql2": "^3.10.0",
+=======
+    "mysql2": "^3.9.9",
+>>>>>>> 2ac973ec7cdac59e053aaf77495b5b5eb078f1e1
     "vite": "^4.0.0"
   },
   "description": "## create-svelte",
