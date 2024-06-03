@@ -32,6 +32,7 @@ let connection;
   console.log("Connected to MySQL");
 })();
 
+
 // Ruta para iniciar sesión
 app.post("/login", async (req, res) => {
   const { correo_electronico, contraseña } = req.body;
@@ -175,7 +176,7 @@ app.get("/imagenes/:usuario_id", async (req, res) => {
   }
 });
 
-//Ruta para obtener todas las imagenes
+//Ruta para obtener todas las imagenescd backend
 
 app.get("/all-images", async (req, res) => {
   try {
@@ -201,6 +202,8 @@ app.delete("/delete-image/:nombreImagen", async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
