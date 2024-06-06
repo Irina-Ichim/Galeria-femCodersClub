@@ -1,3 +1,4 @@
+
 import express from "express";
 import mysql from "mysql2/promise";
 import bodyParser from "body-parser";
@@ -22,25 +23,15 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 let connection;
 
-const startServer = async () => {
-  try {
-      const connection = await mysql.createConnection({
-          host: process.env.DB_HOST,
-          user: process.env.DB_USER,
-          password: process.env.DB_PASSWORD,
-          database: process.env.DB_NAME,
-         
-      });
-
-      console.log('Connected to the database successfully');
-      // Inicia tu servidor aquí
-
-  } catch (error) {
-      console.error('Error connecting to the database:', error);
-  }
-};
-
-startServer();
+(async function () {
+  connection = await mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+  });
+  console.log("Connected to MySQL");
+})();
 
 // Ruta para iniciar sesión
 app.post("/login", async (req, res) => {
@@ -211,7 +202,7 @@ app.delete("/delete-image/:nombreImagen", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3300
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
