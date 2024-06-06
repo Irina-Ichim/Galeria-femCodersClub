@@ -27,7 +27,11 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "multer": "^1.4.5-lts.1",
+<<<<<<< HEAD
+    "mysql2": "^3.10.0",
+=======
     "mysql2": "^3.9.9",
+>>>>>>> 2ac973ec7cdac59e053aaf77495b5b5eb078f1e1
     "vite": "^4.0.0"
   },
   "description": "## create-svelte",

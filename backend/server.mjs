@@ -33,6 +33,7 @@ let connection;
   console.log("Connected to MySQL");
 })();
 
+
 // Ruta para iniciar sesión
 app.post("/login", async (req, res) => {
   const { correo_electronico, contraseña } = req.body;
@@ -202,7 +203,10 @@ app.delete("/delete-image/:nombreImagen", async (req, res) => {
   }
 });
 
+
 const PORT = process.env.PORT || 3000;
+
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
