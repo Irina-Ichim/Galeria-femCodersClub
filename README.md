@@ -1,5 +1,7 @@
 # GaleríaFemCoders Club
 
+![Descripción del GIF](/static/giffem.gif)
+
 Bienvenido/a a la Galería FemCoders Club, una plataforma donde los miembros registrados pueden compartir fotos de los eventos organizados por la comunidad femCoders Club. Este proyecto consta de dos partes principales: el backend y la interfaz de usuario.
 
 ## Descripción 📝
